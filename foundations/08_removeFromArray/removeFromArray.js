@@ -1,17 +1,19 @@
 const removeFromArray = function (ar, ...toDelete) {
 
-	// remove multiple with the same value
 
-	console.log(toDelete);
-	let index;
+	let deleteElementIndex;
 
 	for (let i = 0; i < toDelete.length; i++) {
-		index = ar.indexOf(toDelete[i])
-		ar.splice(index, 1)
+
+		while (ar.includes(toDelete[i])) {
+
+			deleteElementIndex = ar.indexOf(toDelete[i])
+			ar.splice(deleteElementIndex, 1)
+
+			console.log("has another element!");
+		}
+
 	}
-
-
-
 
 	return ar;
 };
